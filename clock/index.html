@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <script>
+        let a;
+        let date;
+        let time;
+        const b = { weekday: 'long' , year: 'numeric' , month: 'long' ,day: 'numeric' };
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined,b);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time +' on '+ date;
+        }, 0);
+
+    </script>
+</head>
+<style>
+    .container {
+        padding: 1rem;
+        background-color: rgb(210, 210, 210);
+        max-width: 500px;
+        display: block;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="jumotron">
+            <h2 class="display-4"> Current time is: <br> <span id="time"></span> </h2>
+            <p class="lead">We have got you covered. This is the current time in your country.</p>
+            <hr class="my-4">
+            <p>We are here to display the time to you.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
